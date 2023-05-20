@@ -19,9 +19,9 @@ const avatar = computed(() => userStore.userInfo.avatar)
 <template>
   <template v-if="image">
     <NAvatar v-if="isString(avatar) && avatar.length > 0" :src="avatar" :fallback-src="defaultAvatar" />
-    <NAvatar v-else round=false :src="defaultAvatar" />
+    <NAvatar v-else  :src="defaultAvatar" />
   </template>
   <span v-else class="text-[28px] dark:text-white">
-    <NAvatar round=false :src="defaultAvatarAI" />
+    <NAvatar  :src="defaultAvatarAI" />
   </span>
 </template>
