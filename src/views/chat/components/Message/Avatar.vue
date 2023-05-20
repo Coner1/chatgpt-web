@@ -3,8 +3,8 @@ import { computed } from 'vue'
 import { NAvatar } from 'naive-ui'
 import { useUserStore } from '@/store'
 import { isString } from '@/utils/is'
-import defaultAvatar from '@/assets/user_avatar.png'
-import defaultAvatarAI from '@/assets/ai_robot.png'
+import defaultAvatar from '@/assets/user_avatar.jpg'
+import defaultAvatarAI from '@/assets/ai_robot.jpg'
 
 interface Props {
   image?: boolean
@@ -19,9 +19,9 @@ const avatar = computed(() => userStore.userInfo.avatar)
 <template>
   <template v-if="image">
     <NAvatar v-if="isString(avatar) && avatar.length > 0" :src="avatar" :fallback-src="defaultAvatar" />
-    <NAvatar v-else round :src="defaultAvatar" />
+    <NAvatar v-else round="false" :color="white" :src="defaultAvatar" />
   </template>
   <span v-else class="text-[28px] dark:text-white">
-    <NAvatar round :src="defaultAvatarAI" />
+    <NAvatar round=false :color="white" :src="defaultAvatarAI" />
   </span>
 </template>
